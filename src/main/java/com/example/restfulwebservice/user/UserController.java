@@ -13,6 +13,9 @@ import java.util.List;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
+/**
+ * 실제 DB 연동하지 않고 UserDaoService에서 더미 데이터를 반환
+ */
 @RestController
 public class UserController {
     private UserDaoService service;
@@ -47,9 +50,14 @@ public class UserController {
     public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
         User savedUser = service.save(user);
 
+        /**
+         * 사용자 추가 이후 어떤 URI로 확인(사용자 상세정보 API)이 가능한지 정보를 반환
+         *  - Http Status Code : 201 OK (Created) 반환
+         *  - Response Headers 의 Location에 "http://localhost:8088/users/4" 반환 (추가된 정보 확인 URI)
+         * */
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
-                .buildAndExpand(savedUser.getId())
+                .buildAndExpand(savedUser.getId())  // 저장된 ID 값 설정
                 .toUri();
 
         return ResponseEntity.created(location).build();
