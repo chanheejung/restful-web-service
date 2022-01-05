@@ -26,6 +26,9 @@ public class AdminUserController {
     public MappingJacksonValue retrieveAllUsers() {
         List<User> users = service.findAll();
 
+        /***
+         * RESTful Service 기능 확장 - 프로그래밍으로 제어하는 Filtering 방법 - 개별 사용자 조회
+         * */
         SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter
                 .filterOutAllExcept("id", "name", "joinDate", "password");
 
