@@ -9,6 +9,7 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
+/*** URI를 이용한 REST API Version 관리 */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -41,9 +41,10 @@ public class AdminUserController {
     }
 
     // GET /admin/users/1 -> /admin/v1/users/1
-//    @GetMapping("/v1/users/{id}")
-//    @GetMapping(value = "/users/{id}/", params = "version=1")
-//    @GetMapping(value = "/users/{id}", headers="X-API-VERSION=1")
+//    @GetMapping("/v1/users/{id}")  /*** URI를 이용한 REST API Version 관리 - URL로 Versionning */
+//    @GetMapping(value = "/users/{id}/", params = "version=1") /*** URI를 이용한 REST API Version 관리 - Request 파라미터로 Versionning */
+//    @GetMapping(value = "/users/{id}", headers="X-API-VERSION=1")  /*** URI를 이용한 REST API Version 관리 - Header로 Versionning */
+    /*** URI를 이용한 REST API Version 관리 - Mime 타입을 이용하여 Versionning  accept : application/vnd.company.appv1+json */
     @GetMapping(value = "/users/{id}", produces = "application/vnd.company.appv1+json")
     public MappingJacksonValue retrieveUserV1(@PathVariable int id) {
         User user = service.findOne(id);
@@ -77,6 +78,7 @@ public class AdminUserController {
             throw new UserNotFoundException(String.format("ID[%s] not found", id));
         }
 
+        /*** URI를 이용한 REST API Version 관리 - v2에서는 grade를 더 보여준다. */
         // User -> UserV2
         UserV2 userV2 = new UserV2();
         BeanUtils.copyProperties(user, userV2); // id, name, joinDate, password, ssn
