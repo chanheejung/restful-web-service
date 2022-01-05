@@ -1,0 +1,7 @@
+version: '3'
+services:
+  restful-web-service:
+    build: ./
+    # 내부에서 개방할 포트 : 외부에서 접근할 포트
+    ports:
+      - "8088:8088"
