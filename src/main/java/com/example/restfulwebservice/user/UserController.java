@@ -10,6 +10,7 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
+/*** Level3 단계의 REST API 구현을 위한 HATEOAS 적용 */
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
@@ -39,12 +40,35 @@ public class UserController {
         }
 
         // HATEOAS
+        /*** Level3 단계의 REST API 구현을 위한 HATEOAS 적용
+         *  - 현재 리소스와 연관된(호출 가능한) 자원 상태 정보를 제공 */
         Resource<User>  resource = new Resource<>(user);
         ControllerLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllUsers());
         resource.add(linkTo.withRel("all-users"));
 
         return resource;
     }
+    /*** links 로 HATEOS 정보 반환
+     * {
+     *     "id": 1,
+     *     "name": "Kenneth",
+     *     "joinDate": "2022-01-05T14:28:43.576+0000",
+     *     "password": "pass1",
+     *     "ssn": "701010-1111111",
+     *     "posts": null,
+     *     "links": [
+     *         {
+     *             "rel": "all-users",
+     *             "href": "http://localhost:8088/users",
+     *             "hreflang": null,
+     *             "media": null,
+     *             "title": null,
+     *             "type": null,
+     *             "deprecation": null
+     *         }
+     *     ]
+     * }
+     */
 
     /*** @Valid : 객체에 등록된 Validation 사용 */
     @PostMapping("/users")

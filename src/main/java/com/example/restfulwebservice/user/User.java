@@ -25,7 +25,7 @@ import java.util.List;
 /***
  * RESTful Service 기능 확장 - 프로그래밍으로 제어하는 Filtering 방법 - 개별/전체 사용자 조회
  * */
-@JsonFilter("UserInfo")
+//@JsonFilter("UserInfo")
 @ApiModel(description = "사용자 상세 정보를 위한 도메인 객체")
 @Entity
 public class User {
