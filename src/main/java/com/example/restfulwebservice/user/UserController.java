@@ -46,6 +46,7 @@ public class UserController {
         return resource;
     }
 
+    /*** @Valid : 객체에 등록된 Validation 사용 */
     @PostMapping("/users")
     public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
         User savedUser = service.save(user);

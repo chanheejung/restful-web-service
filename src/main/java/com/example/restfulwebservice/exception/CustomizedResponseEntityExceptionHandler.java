@@ -46,4 +46,16 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 
         return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
     }
+    /** TODO : 아래 오류 응답의 details가 너무 길다. "Name은 2글자 이상 입력해 주세요." 만 출력해 보자.
+    {
+        "timestamp": "2022-01-05T13:13:12.587+0000",
+        "message": "Validation Failed",
+        "details": "org.springframework.validation.BeanPropertyBindingResult: 1
+         errors\nField error in object 'user' on field 'name': rejected value [u]; codes
+          [Size.user.name,Size.name,Size.java.lang.String,Size]; arguments
+           [org.springframework.context.support.DefaultMessageSourceResolvable:
+           codes [user.name,name]; arguments []; default message [name],2147483647,2];
+           default message [Name은 2글자 이상 입력해 주세요.]"
+    }
+     */
 }

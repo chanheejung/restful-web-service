@@ -33,7 +33,7 @@ public class User {
     @Size(min=2, message = "Name은 2글자 이상 입력해 주세요.")
     @ApiModelProperty(notes = "사용자 이름을 입력해 주세요.")
     private String name;
-    @Past
+    @Past /*** 가입시점 과거 날짜만 가능 */
     @ApiModelProperty(notes = "사용자의 등록일을 입력해 주세요.")
     private Date joinDate;
 

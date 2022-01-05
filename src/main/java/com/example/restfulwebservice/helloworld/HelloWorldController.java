@@ -36,6 +36,15 @@ public class HelloWorldController {
         return new HelloWorldBean(String.format("Hello World, %s", name));
     }
 
+    /***
+     * 다국어 처리
+     *  1. main에 다국어 처리 Bean 등록
+     *  2. application.yml에 다국어 파일명 설정
+     *  3. 다국어 파일 작성 : messages.properties messages_en.properties
+     *  4. 로직에서 사용 : messageSource.getMessage("greeting.message", null, locale);
+     * @param locale
+     * @return
+     */
     @GetMapping(path = "/hello-world-internationalized")
     public String helloWorldInternationalized(
             @RequestHeader(name="Accept-Language", required=false)  Locale locale) {
