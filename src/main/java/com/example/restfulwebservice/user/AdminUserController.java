@@ -27,7 +27,7 @@ public class AdminUserController {
         List<User> users = service.findAll();
 
         /***
-         * RESTful Service 기능 확장 - 프로그래밍으로 제어하는 Filtering 방법 - 개별 사용자 조회
+         * RESTful Service 기능 확장 - 프로그래밍으로 제어하는 Filtering 방법 - 전체 사용자 조회
          * */
         SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter
                 .filterOutAllExcept("id", "name", "joinDate", "password");
@@ -52,6 +52,9 @@ public class AdminUserController {
             throw new UserNotFoundException(String.format("ID[%s] not found", id));
         }
 
+        /***
+         * RESTful Service 기능 확장 - 프로그래밍으로 제어하는 Filtering 방법 - 개별 사용자 조회
+         * */
         SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter
                 .filterOutAllExcept("id", "name", "password", "ssn");
 
