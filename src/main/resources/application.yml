@@ -10,6 +10,7 @@ spring:
     show-sql: true
   messages:
     basename: messages
+  # /*** Configuration 클래스를 이용한 사용자 인증 처리 */
   security:
     user:
       name: username

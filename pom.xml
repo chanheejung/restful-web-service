@@ -70,6 +70,9 @@
             <artifactId>spring-data-rest-hal-browser</artifactId>
         </dependency>
 
+        <!-- /*** Spring Security를 이용한 인증 처리
+                        1. 라이브러리만 추가한 상태에서 API를 호출하면 Http Status 401 발생
+                            => POSTMAN > Authorization > Basic Auth > ID/PW 입력 */ -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>

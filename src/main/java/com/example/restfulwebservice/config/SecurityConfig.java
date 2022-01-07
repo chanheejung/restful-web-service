@@ -16,6 +16,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().frameOptions().disable();
     }
 
+    /*** Configuration 클래스를 이용한 사용자 인증 처리 */
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth)
         throws Exception {
