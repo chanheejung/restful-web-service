@@ -13,6 +13,10 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+/*** REST API Documentation을 위한 Swagger 사용
+ *      - http://localhost:8088/v2/api-docs
+ *      - http://localhost:8088/swagger-ui.html
+ *      */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {

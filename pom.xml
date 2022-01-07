@@ -85,6 +85,7 @@
             <artifactId>jackson-dataformat-xml</artifactId>
             <version>2.10.2</version>
         </dependency>
+        <!-- /*** REST API Documentation을 위한 Swagger 사용 */ -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
