@@ -22,11 +22,10 @@ import java.util.List;
 @AllArgsConstructor
 //@JsonIgnoreProperties(value={"password", "ssn"})  /*** 응답에 해당 값 제거*/
 @NoArgsConstructor
-/***
- * RESTful Service 기능 확장 - 프로그래밍으로 제어하는 Filtering 방법 - 개별/전체 사용자 조회
- * */
+/*** * RESTful Service 기능 확장 - 프로그래밍으로 제어하는 Filtering 방법 - 개별/전체 사용자 조회 * */
 //@JsonFilter("UserInfo")
 @ApiModel(description = "사용자 상세 정보를 위한 도메인 객체")
+/***  Spring Data JPA를 이용한 Entity 설정과 초기 데이터 생성 * */
 @Entity
 public class User {
     @Id
