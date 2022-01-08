@@ -15,6 +15,7 @@ import java.util.Optional;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
+/*** JPA Service 구현을 위한 Controller, Repository 생성 */
 @RestController
 @RequestMapping("/jpa")
 public class UserJpaController {
