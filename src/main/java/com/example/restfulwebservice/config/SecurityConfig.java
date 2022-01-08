@@ -9,6 +9,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    /*** 인텔리제이 단축키 - Alt + Ins : 구현가능한 메서드등 목록 보임 */
+    /***  JPA를 사용을 위한 Dependency 추가와 설정 */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers("/h2-console/**").permitAll();

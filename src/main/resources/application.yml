@@ -6,10 +6,13 @@ logging:
     org.springframework: DEBUG
 
 spring:
+  # /*** JPA를 사용을 위한 Dependency 추가와 설정*/
   jpa:
-    show-sql: true
+    show-sql: true # 개발 단개에서 SQL 로그 출력
+
   messages:
     basename: messages
+
   # /*** Configuration 클래스를 이용한 사용자 인증 처리 */
   security:
     user:
